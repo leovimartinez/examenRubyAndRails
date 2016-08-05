@@ -1,0 +1,36 @@
+<h1>Pages#batmanVsSuperman</h1>
+<p>Find me in app/views/pages/batmanVsSuperman.html.erb</p>
+<div class="jumbotron text-center">
+  <h1>Leovi Oscar Martinez Dominguez</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    <%=image_tag('batman.jpeg', size: "300" ) %>
+    <h2><li><%= link_to "Batman", pages_batman_path %></li></h2>
+
+      <h3>Formulario</h3>
+      <p><%= flash[:notice] %></p>
+     	<form action="<%= pages_votar_path%>" method="POST">
+			<%= hidden_field_tag :authenticity_token, 
+			form_authenticity_token %>
+			<label>Heroe:</label><input name="heroe">
+			<label>E-mail:</label><input name="mail">
+			<input type="submit" value="Enviar">  
+		</form>
+     
+    </div>
+    <div class="col-sm-4">
+    <%=image_tag('superman.jpg', size: "300" ) %>
+    <h2><li><%= link_to "Superman", pages_superman_path %></li></h2>
+
+     <h3>Formulario</h3>
+      <p><%= flash[:notice] %></p>
+     	<form action="<%= pages_votar_path%>" method="POST">
+			<%= hidden_field_tag :authenticity_token, 
+			form_authenticity_token %>
+			<label>Heroe:</label><input name="heroe">
+			<label>E-mail:</label><input name="mail">
+			<input type="submit" value="Enviar">  
+		</form>
+    </div>
